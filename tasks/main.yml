@@ -1,0 +1,9 @@
+---
+- name: Set sysctl settings
+  sysctl:
+    name: "{{ item.key }}"
+    reload: true
+    state: present
+    sysctl_set: true
+    value: "{{ item.value }}"
+  with_dict: "{{ sysctl_lines }}"
