@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+
+  roles:
+    - role: ansible-role-sysctl
+      sysctl_entries:
+        - name: vm.overcommit_memory
+          value: 1

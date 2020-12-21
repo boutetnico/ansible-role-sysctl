@@ -1,3 +1,5 @@
 ---
-sysctl_lines: {}
-#  vm.overcommit_memory: 1
+sysctl_dependencies:
+  - procps
+
+sysctl_entries: []

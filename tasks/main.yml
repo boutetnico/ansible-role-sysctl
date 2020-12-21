@@ -1,9 +1,17 @@
 ---
-- name: Set sysctl settings
-  sysctl:
-    name: "{{ item.key }}"
-    reload: true
+- name: Ensure dependencies are installed
+  apt:
+    name: "{{ sysctl_dependencies }}"
     state: present
-    sysctl_set: true
+    update_cache: true
+
+- name: Ensure sysctl entries are set
+  sysctl:
+    name: "{{ item.name }}"
+    reload: "{{ item.reload | d(true) }}"
+    sysctl_file: "{{ item.sysctl_file | d(omit) }}"
+    sysctl_set: "{{ item.sysctl_set | d(omit) }}"
     value: "{{ item.value }}"
-  with_dict: "{{ sysctl_lines }}"
+  loop: "{{ sysctl_entries }}"
+  loop_control:
+    label: "{{ item.name }}"
