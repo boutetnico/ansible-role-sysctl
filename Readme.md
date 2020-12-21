@@ -23,7 +23,7 @@ Role Variables
 --------------
 
 | Variable            | Required | Default     | Choices   | Comments                             |
-|---------------------|----------|----- -------|-----------|--------------------------------------|
+|---------------------|----------|-------------|-----------|--------------------------------------|
 | sysctl_dependencies | yes      | `[procps]`  | list      |                                      |
 | sysctl_entries      | yes      | `[]`        | list      | See `defaults/main.yml` for example. |
 
