@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   role_name: sysctl
+  namespace: boutetnico
   author: Nicolas Boutet
   description: Manipulate sysctl entries.
   license: MIT
