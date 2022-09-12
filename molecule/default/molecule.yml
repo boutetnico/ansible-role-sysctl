@@ -13,11 +13,11 @@ platforms:
   - name: ansible-role-sysctl-debian-11
     image: debian:11
     privileged: true
-  - name: ansible-role-sysctl-ubuntu-1804
-    image: ubuntu:18.04
-    privileged: true
   - name: ansible-role-sysctl-ubuntu-2004
     image: ubuntu:20.04
+    privileged: true
+  - name: ansible-role-sysctl-ubuntu-2204
+    image: ubuntu:22.04
     privileged: true
 
 lint: |

@@ -1,12 +1,12 @@
 ---
 - name: Ensure dependencies are installed
-  apt:
+  ansible.builtin.apt:
     name: "{{ sysctl_dependencies }}"
     state: present
     update_cache: true
 
 - name: Ensure sysctl entries are set
-  sysctl:
+  ansible.posix.sysctl:
     name: "{{ item.name }}"
     reload: "{{ item.reload | d(true) }}"
     sysctl_file: "{{ item.sysctl_file | d(omit) }}"
