@@ -25,7 +25,7 @@ jobs:
         run: sudo apt-get remove --purge -y ansible
 
       - name: Install dependencies
-        run: pip install ansible ansible-lint docker flake8 molecule molecule-plugins[docker] pytest-testinfra yamllint
+        run: pip install ansible ansible-lint docker flake8 molecule molecule-plugins[docker] pytest-testinfra
 
       - name: Display versions
         run: |
@@ -36,7 +36,6 @@ jobs:
 
       - name: Lint code
         run: |
-          yamllint .
           ansible-lint
           flake8
         env:
