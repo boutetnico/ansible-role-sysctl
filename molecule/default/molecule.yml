@@ -1,7 +1,7 @@
 ---
 dependency:
   name: galaxy
-  enabled: False
+  enabled: false
 
 driver:
   name: docker
@@ -19,11 +19,6 @@ platforms:
   - name: ansible-role-sysctl-ubuntu-2204
     image: ubuntu:22.04
     privileged: true
-
-lint: |
-    yamllint .
-    ansible-lint
-    flake8
 
 provisioner:
   name: ansible
