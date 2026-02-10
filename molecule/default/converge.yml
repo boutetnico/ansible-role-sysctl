@@ -7,3 +7,7 @@
       sysctl_entries:
         - name: vm.overcommit_memory
           value: 1
+        - name: vm.swappiness
+          value: 60
+        - name: net.ipv4.ip_forward
+          value: 0
