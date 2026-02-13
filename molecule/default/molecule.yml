@@ -7,11 +7,11 @@ driver:
   name: docker
 
 platforms:
-  - name: ansible-role-sysctl-debian-11
-    image: debian:11
-    privileged: true
   - name: ansible-role-sysctl-debian-12
     image: debian:12
+    privileged: true
+  - name: ansible-role-sysctl-debian-13
+    image: debian:13
     privileged: true
   - name: ansible-role-sysctl-ubuntu-2204
     image: ubuntu:22.04
